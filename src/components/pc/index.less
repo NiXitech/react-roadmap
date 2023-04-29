@@ -1,0 +1,65 @@
+@defaultTextColor: #fff;
+
+.defaultText(@fontWeight: normal, @color: @defaultTextColor) {
+  font-weight: @fontWeight;
+  text-align: center;
+  color: @color;
+  // font-family: HarmonyOS Sans;
+}
+
+.road-map {
+  min-width: 1280px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  box-sizing: border-box;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-title {
+    position: relative;
+    width: 100%;
+    font-size: 60px;
+    .defaultText(bold);
+  }
+
+  &-tip {
+    width: 370px;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a4a4a;
+  }
+
+  &--svg {
+    width: 100%;
+    background-image: url('../../assets/road_map_bg_pc.png');
+    background-repeat: no-repeat;
+    background-position: 0 30px;
+
+    &__line {
+      width: 100%;
+    }
+
+    &__desc {
+      font-size: 18px;
+      width: 100%;
+      margin-top: 5px;
+      .defaultText();
+    }
+
+    &__title {
+      font-size: 24px;
+      .defaultText(bold);
+    }
+
+    &__year {
+      font-size: 28px;
+      .defaultText(bold);
+    }
+  }
+}

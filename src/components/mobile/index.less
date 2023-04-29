@@ -1,0 +1,58 @@
+@defaultTextColor: #fff;
+
+.defaultText(@fontWeight: normal, @color: @defaultTextColor) {
+  font-weight: @fontWeight;
+  text-align: center;
+  color: @color;
+  // font-family: HarmonyOS Sans;
+}
+
+.mobile-road-map {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  box-sizing: border-box;
+  pointer-events: auto;
+  background-image: url('../../assets/road_map_bg_mobile.png');
+  background-repeat: no-repeat;
+  background-position: 0 30%;
+
+  &-title {
+    position: relative;
+    width: 100%;
+    font-size: 32px;
+    .defaultText(bold);
+  }
+
+  &--svg {
+    &__line {
+      width: 100%;
+    }
+
+    &__title {
+      .defaultText(bold);
+    }
+
+    &__year {
+      .defaultText(bold);
+    }
+  }
+
+  &-footer {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 12px;
+    .defaultText(500, #4a4a4a);
+  }
+}
+
+// 适配平板
+@media (min-width: 600px) {
+  .mobile-road-map {
+    background-size: contain;
+    &-footer {
+      font-size: 8px;
+    }
+  }
+}
