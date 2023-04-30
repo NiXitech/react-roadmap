@@ -68,7 +68,6 @@ const getPlugins = () => {
         styles({
             mode: 'extract'
         }),
-        dts(),
         copy({
             targets: [
                 {
@@ -82,7 +81,7 @@ const getPlugins = () => {
 
 const esmConfig = {
     input,
-    plugins: getPlugins(),
+    plugins: [getPlugins()].concat(terser()),
     external: externalDeps.concat(externalPeerDeps),
     output: {
         name: 'react-roadmap',
@@ -94,5 +93,13 @@ const esmConfig = {
     },
 }
 
-export default [esmConfig];
+const dtsConfig = {
+    input,
+    plugins: [getPlugins()].concat(dts()),
+    output: {
+        dir: `${output}`,
+    },
+}
+
+export default [dtsConfig, esmConfig];
 
