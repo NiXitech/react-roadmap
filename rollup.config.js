@@ -6,7 +6,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import styles from 'rollup-plugin-styles';
 import terser from '@rollup/plugin-terser';
-
+import json from '@rollup/plugin-json';
+import copy from 'rollup-plugin-copy';
+import path from 'node:path';
+import { pathToFileURL } from 'url';
+import pkg from './package.json' assert { type: "json" };
 
 const multiInput = RollupPluginMultiInput.default;
 
@@ -19,6 +23,11 @@ const input = [
 const output = 'build';
 
 const name = 'react-roadmap';
+const { pathname } = pathToFileURL(import.meta.url);
+const __dirname = path.dirname(pathname)
+
+const externalDeps = Object.keys(pkg.dependencies || {});
+const externalPeerDeps = Object.keys(pkg.peerDependencies || {});
 
 const getPlugins = () => {
     return [
@@ -33,7 +42,7 @@ const getPlugins = () => {
                 }
             ],
         }),
-        // commonjs(),
+        commonjs(),
         // esbuild({
         //     include: /\.[jt]sx?$/,
         //     target: 'esnext',
@@ -48,7 +57,7 @@ const getPlugins = () => {
             exclude: /node_modules/,
             extensions: ['.ts', '.tsx'],
         }),
-        terser(),
+        // terser(),
         postcss({
             extensions: ['.less', '.css'],
             minimize: true,
@@ -56,19 +65,30 @@ const getPlugins = () => {
         }),
         styles({
             mode: 'extract'
+        }),
+        copy({
+            targets: [
+                {
+                    src: 'package.json',
+                    dest: output,
+                }
+            ]
         })
     ]
 }
 
-
 const esmConfig = {
     input,
     plugins: getPlugins(),
+    external: externalDeps.concat(externalPeerDeps),
     output: {
+        name: 'react-roadmap',
         format: 'esm',
         dir: `${output}`,
         sourcemap: true,
-    }
+        chunkFileNames: '_chunks/dep-[hash].js',
+        // exports: 'named',
+    },
 }
 
 export default [esmConfig];

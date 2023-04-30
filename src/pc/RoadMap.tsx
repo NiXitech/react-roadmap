@@ -1,8 +1,8 @@
 import { SVG_WIDTH, SVG_HEIGHT, CIRCLE_LIST } from './constant';
 import { FC } from 'react';
 import CircleBox from './CircleBox';
-import { getFinalNodes } from '../utils/index';
-import { RoadMapNS } from '.';
+import { getFinalNodes } from '../utils';
+import { RoadMapNS } from './type';
 
 type RoadMapProps = RoadMapNS.RoadMapProps;
 

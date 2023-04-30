@@ -1,8 +1,18 @@
 {
   "name": "react-roadmap",
-  "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "index.js.map",
+    "react-roadmap.min.css",
+    "constants",
+    "mobile",
+    "pc",
+    "utils"
+  ],
   "scripts": {
     "dev": "vite --host",
     "build:site": "tsc && vite build",
@@ -17,6 +27,7 @@
     "postcss-px-to-viewport": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-roadmap": "^1.0.1",
     "react-router-dom": "^6.10.0",
     "tdesign-mobile-react": "^0.3.1"
   },
@@ -27,6 +38,7 @@
     "@babel/preset-typescript": "^7.21.5",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
     "@types/react": "^18.0.28",
@@ -44,6 +56,7 @@
     "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.8",
     "rollup": "^3.21.1",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-postcss": "^4.0.2",

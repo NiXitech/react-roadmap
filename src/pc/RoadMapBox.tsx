@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { TEXT_TIP } from '../constants';
-import { RoadMap } from '.';
-import { RoadMapNS } from '.';
+import RoadMap from './RoadMap';
+import { RoadMapNS } from './type';
 
 type RoadMapBoxProps = RoadMapNS.RoadMapBoxProps;
 

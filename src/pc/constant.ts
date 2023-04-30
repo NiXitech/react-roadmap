@@ -1,4 +1,4 @@
-import { RoadMapNS } from ".";
+import { RoadMapNS } from "./type";
 
 export const CIRCLE_R = 19;
 export const CIRCLE_ROW_ONE_Y = 0;

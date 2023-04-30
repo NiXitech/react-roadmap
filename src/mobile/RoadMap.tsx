@@ -12,8 +12,8 @@ import {
 } from './constant';
 import CircleBox from './CircleBox';
 import { FC } from 'react';
-import { MobileRoadMapNS } from '.';
-import { getFinalNodes } from '@/utils';
+import { MobileRoadMapNS } from './type';
+import { getFinalNodes } from '../utils';
 
 type RoadMapProps = MobileRoadMapNS.RoadMapProps;
 

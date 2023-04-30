@@ -11,7 +11,7 @@ import {
   TEXT_YEAR_FONT_SIZE,
   TEXT_TITLE_FONT_SIZE,
 } from './constant';
-import { MobileRoadMapNS } from '.';
+import { MobileRoadMapNS } from './type';
 
 type CircleBoxProps = MobileRoadMapNS.CircleBoxProps;
 

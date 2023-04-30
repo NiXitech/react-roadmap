@@ -1,4 +1,4 @@
-import { MobileRoadMapNS } from ".";
+import { MobileRoadMapNS } from "./type";
 
 export const SVG_WIDTH = '100%';
 export const SVG_HEIGHT = '100%';
