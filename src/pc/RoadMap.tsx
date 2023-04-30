@@ -1,5 +1,5 @@
 import { SVG_WIDTH, SVG_HEIGHT, CIRCLE_LIST } from './constant';
-import { FC } from 'react';
+import React from 'react';
 import CircleBox from './CircleBox';
 import { getFinalNodes } from '../utils';
 import { RoadMapNS } from './type';
@@ -11,7 +11,7 @@ type RoadMapProps = RoadMapNS.RoadMapProps;
  * @param props
  * @returns
  */
-const RoadMap: FC<RoadMapProps> = (props) => {
+const RoadMap: React.FC<RoadMapProps> = (props) => {
   const { nodes, startColor, endColor } = props;
   const finalNodes = getFinalNodes(CIRCLE_LIST, nodes);
 

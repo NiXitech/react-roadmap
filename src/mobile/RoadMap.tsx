@@ -11,7 +11,7 @@ import {
   SVG_VIEWBOX_HEIGHT,
 } from './constant';
 import CircleBox from './CircleBox';
-import { FC } from 'react';
+import React from 'react';
 import { MobileRoadMapNS } from './type';
 import { getFinalNodes } from '../utils';
 
@@ -22,7 +22,7 @@ type RoadMapProps = MobileRoadMapNS.RoadMapProps;
  * @param props
  * @returns
  */
-const RoadMap: FC<RoadMapProps> = (props) => {
+const RoadMap: React.FC<RoadMapProps> = (props) => {
   const { nodes, startColor, endColor } = props;
   const finalNodes = getFinalNodes(CIRCLE_LIST, nodes);
 

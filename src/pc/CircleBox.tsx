@@ -8,12 +8,12 @@ import {
   TEXT_HEIGHT,
   PASSED_COLOR,
 } from './constant';
-import { FC } from 'react';
+import React from 'react';
 import { RoadMapNS } from './type';
 
 type CircleBoxProps = RoadMapNS.CircleBoxProps;
 
-const CircleBox: FC<CircleBoxProps> = (props) => {
+const CircleBox: React.FC<CircleBoxProps> = (props) => {
   const { x, y, title, year, desc, color, yearColor, passed, passedColor } = props;
 
   const circleX = x;

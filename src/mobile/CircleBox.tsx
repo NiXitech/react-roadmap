@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 import {
   CIRCLE_COLOR,
   CIRCLE_R,
@@ -15,7 +15,7 @@ import { MobileRoadMapNS } from './type';
 
 type CircleBoxProps = MobileRoadMapNS.CircleBoxProps;
 
-const CircleBox: FC<CircleBoxProps> = (props) => {
+const CircleBox: React.FC<CircleBoxProps> = (props) => {
   const { x, y, title, year, color, yearColor, passed, passedColor, yearFontSize, titleFontSize } =
     props;
 

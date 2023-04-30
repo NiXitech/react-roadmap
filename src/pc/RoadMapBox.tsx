@@ -1,11 +1,11 @@
-import { FC, memo } from 'react';
+import React from 'react';
 import { TEXT_TIP } from '../constants';
 import RoadMap from './RoadMap';
 import { RoadMapNS } from './type';
 
 type RoadMapBoxProps = RoadMapNS.RoadMapBoxProps;
 
-const RoadMapBox: FC<RoadMapBoxProps> = memo((props) => {
+const RoadMapBox: React.FC<RoadMapBoxProps> = React.memo((props) => {
   const { nodes, title, tip } = props;
   return (
     <div className="road-map">

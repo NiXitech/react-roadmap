@@ -1,11 +1,11 @@
-import { FC, memo } from 'react';
+import React from 'react';
 import { TEXT_TIP } from '../constants';
 import { MobileRoadMapNS } from './type';
 import MobileRoadMap from './RoadMap';
 
 type RoadMapBoxProps = MobileRoadMapNS.RoadMapBoxProps;
 
-const RoadMapBox: FC<RoadMapBoxProps> = memo((props) => {
+const RoadMapBox: React.FC<RoadMapBoxProps> = React.memo((props) => {
   const { nodes, title, tip } = props;
   return (
     <div className="mobile-road-map">
