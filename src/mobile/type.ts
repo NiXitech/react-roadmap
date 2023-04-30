@@ -14,7 +14,7 @@ export namespace MobileRoadMapNS {
         tip?: string;
     }
 
-    export type CircleBoxNode = Omit<CircleBoxProps, 'x' | 'y'>
+    export type CircleBoxNode = Omit<CircleBoxProps, 'x' | 'y'>;
 
     export type CircleBoxProps = {
         x: number;

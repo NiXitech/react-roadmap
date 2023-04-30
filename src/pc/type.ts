@@ -14,7 +14,7 @@ export namespace RoadMapNS {
         tip?: string;
     }
 
-    export type CircleBoxNode = Omit<CircleBoxProps, 'x' | 'y'>
+    export type CircleBoxNode = Omit<CircleBoxProps, 'x' | 'y'>;
 
     export type CircleBoxProps = {
         x: number;
@@ -26,7 +26,7 @@ export namespace RoadMapNS {
         yearColor?: string;
         passed?: boolean;
         passedColor?: string;
-    }
+    };
 
     export type CircleNode = {
         x: number;

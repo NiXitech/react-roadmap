@@ -46,11 +46,11 @@ const getPlugins = () => {
         commonjs(),
         // esbuild({
         //     include: /\.[jt]sx?$/,
-        //     target: 'esnext',
-        //     minify: false,
-        //     jsx: 'transform',
-        //     jsxFactory: 'React.createElement',
-        //     jsxFragment: 'React.Fragment',
+        //     //     target: 'esnext',
+        //     minify: true,
+        //     //     jsx: 'transform',
+        //     //     jsxFactory: 'React.createElement',
+        //     //     jsxFragment: 'React.Fragment',
         //     tsconfig: 'tsconfig.json',
         // }),
         babel({
@@ -58,7 +58,8 @@ const getPlugins = () => {
             exclude: /node_modules/,
             extensions: ['.ts', '.tsx'],
         }),
-        terser(),
+        // terser({
+        // }),
         postcss({
             extensions: ['.less', '.css'],
             minimize: true,
