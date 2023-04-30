@@ -14,6 +14,12 @@ export const TEXT_COLOR = '#FFFFFF';
 export const TEXT_YEAR_PASSED_COLOR = '#51B843';
 export const TEXT_YEAR_COLOR = '#FFFFFF';
 
+export const TEXT_YEAR_FONT_SIZE = 28;
+
+export const TEXT_TITLE_FONT_SIZE = 24;
+
+export const TEXT_DESC_FONT_SIZE = 18;
+
 export const TEXT_YEAR_Y_OFFSET = 65;
 export const TEXT_Y_OFFSET = 30;
 

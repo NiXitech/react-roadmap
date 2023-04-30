@@ -20,8 +20,11 @@ export namespace RoadMapNS {
         x: number;
         y: number;
         title: string;
+        titleFontSize?: number;
         year: string;
+        yearFontSize?: number;
         desc?: string;
+        descFontSize?: number;
         color?: string;
         yearColor?: string;
         passed?: boolean;

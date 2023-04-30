@@ -7,6 +7,9 @@ import {
   TEXT_WIDTH,
   TEXT_HEIGHT,
   PASSED_COLOR,
+  TEXT_TITLE_FONT_SIZE,
+  TEXT_YEAR_FONT_SIZE,
+  TEXT_DESC_FONT_SIZE,
 } from './constant';
 import React from 'react';
 import { RoadMapNS } from './type';
@@ -14,14 +17,29 @@ import { RoadMapNS } from './type';
 type CircleBoxProps = RoadMapNS.CircleBoxProps;
 
 const CircleBox: React.FC<CircleBoxProps> = (props) => {
-  const { x, y, title, year, desc, color, yearColor, passed, passedColor } = props;
+  const {
+    x,
+    y,
+    title,
+    year,
+    desc,
+    color,
+    yearColor,
+    passed,
+    passedColor,
+    titleFontSize,
+    yearFontSize,
+    descFontSize,
+  } = props;
 
   const circleX = x;
   const circleY = y;
   const textYearX = circleX - TEXT_WIDTH / 2;
   const textYearY = circleY - TEXT_YEAR_Y_OFFSET;
-  const textX = circleX - TEXT_WIDTH / 2;
-  const textY = circleY + TEXT_Y_OFFSET;
+  const titleX = circleX - TEXT_WIDTH / 2;
+  const titleY = circleY + TEXT_Y_OFFSET;
+  const descX = circleX - TEXT_WIDTH / 2;
+  const descY = circleY + 2 * TEXT_Y_OFFSET;
 
   return (
     <g>
@@ -37,7 +55,13 @@ const CircleBox: React.FC<CircleBoxProps> = (props) => {
         </g>
       )}
 
-      <foreignObject x={textYearX} y={textYearY} width={TEXT_WIDTH} height={TEXT_HEIGHT}>
+      <foreignObject
+        fontSize={yearFontSize}
+        x={textYearX}
+        y={textYearY}
+        width={TEXT_WIDTH}
+        height={TEXT_HEIGHT}
+      >
         <div
           className="road-map--svg__year"
           style={{
@@ -48,8 +72,22 @@ const CircleBox: React.FC<CircleBoxProps> = (props) => {
         </div>
       </foreignObject>
 
-      <foreignObject x={textX} y={textY} width={TEXT_WIDTH} height={TEXT_HEIGHT}>
+      <foreignObject
+        fontSize={titleFontSize}
+        x={titleX}
+        y={titleY}
+        width={TEXT_WIDTH}
+        height={TEXT_HEIGHT}
+      >
         <div className="road-map--svg__title">{title}</div>
+      </foreignObject>
+      <foreignObject
+        fontSize={descFontSize}
+        x={descX}
+        y={descY}
+        width={TEXT_WIDTH}
+        height={TEXT_HEIGHT}
+      >
         <div className="road-map--svg__desc">
           <p>{desc}</p>
         </div>
@@ -62,8 +100,11 @@ CircleBox.defaultProps = {
   color: CIRCLE_COLOR,
   yearColor: TEXT_YEAR_COLOR,
   title: '标题',
+  titleFontSize: TEXT_TITLE_FONT_SIZE,
   year: '2023',
+  yearFontSize: TEXT_YEAR_FONT_SIZE,
   desc: '描述信息',
+  descFontSize: TEXT_DESC_FONT_SIZE,
   passed: false,
   passedColor: PASSED_COLOR,
 };
