@@ -30,8 +30,7 @@ import {
   NODE_9_YEAR,
 } from '@/constants';
 import { CIRCLE_CURRENT_COLOR, CIRCLE_PASSED_COLOR, TEXT_YEAR_PASSED_COLOR } from '@/pc/constant';
-import { RoadMapNS } from '@/index';
-import { RoadMapBox } from 'react-roadmap';
+import { RoadMapBox, RoadMapNS } from '@/index';
 
 const NODES: RoadMapNS.RoadMapNodes[] = [
   {
