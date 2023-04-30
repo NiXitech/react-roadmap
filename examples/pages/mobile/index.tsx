@@ -19,12 +19,12 @@ import {
   NODE_9_TITLE,
   NODE_9_YEAR,
 } from '../../constants';
-import { MobileRoadMapBox, MobileRoadMapNS } from '../../components';
+import { MobileRoadMapBox, MobileRoadMapNS } from '@/index';
 import {
   CIRCLE_CURRENT_COLOR,
   CIRCLE_PASSED_COLOR,
   TEXT_YEAR_PASSED_COLOR,
-} from '../../components/mobile/constant';
+} from '@/mobile/constant';
 import './index.less';
 
 type RoadMapNodes = MobileRoadMapNS.RoadMapNodes;

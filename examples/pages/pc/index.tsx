@@ -28,13 +28,9 @@ import {
   NODE_9_DESC,
   NODE_9_TITLE,
   NODE_9_YEAR,
-} from '../../constants';
-import {
-  CIRCLE_CURRENT_COLOR,
-  CIRCLE_PASSED_COLOR,
-  TEXT_YEAR_PASSED_COLOR,
-} from '../../components/pc/constant';
-import { RoadMapBox, RoadMapNS } from '../../components';
+} from '@/constants';
+import { CIRCLE_CURRENT_COLOR, CIRCLE_PASSED_COLOR, TEXT_YEAR_PASSED_COLOR } from '@/pc/constant';
+import { RoadMapBox, RoadMapNS } from '@/index';
 
 const NODES: RoadMapNS.RoadMapNodes[] = [
   {

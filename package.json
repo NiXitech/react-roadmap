@@ -1,23 +1,34 @@
 {
   "name": "react-roadmap",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build:site": "tsc && vite build",
+    "build": "rollup -c rollup.config.js",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "is-mobile": "^4.0.0",
     "lib-flexible": "^0.3.2",
     "postcss-px-to-viewport": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "tdesign-mobile-react": "^0.3.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
@@ -32,6 +43,11 @@
     "less-loader": "^11.1.0",
     "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.8",
+    "rollup": "^3.21.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-multi-input": "^1.4.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-styles": "^4.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }

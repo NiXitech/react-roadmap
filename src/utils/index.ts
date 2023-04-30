@@ -1,4 +1,4 @@
-import { RoadMapNS } from "../components/pc";
+import { RoadMapNS } from "../pc";
 
 type RoadMapNodes = RoadMapNS.RoadMapNodes;
 type CircleBoxNode = RoadMapNS.CircleBoxNode;
@@ -35,3 +35,4 @@ export const getFinalNodes = (circleList: Array<CircleNode>, nodes: RoadMapNodes
         }
     }) as Array<CircleBoxProps>
 }
+

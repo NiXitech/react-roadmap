@@ -13,7 +13,7 @@ import {
 import CircleBox from './CircleBox';
 import { FC } from 'react';
 import { MobileRoadMapNS } from '.';
-import { getFinalNodes } from '../../utils';
+import { getFinalNodes } from '@/utils';
 
 type RoadMapProps = MobileRoadMapNS.RoadMapProps;
 
