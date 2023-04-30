@@ -10,6 +10,7 @@ import json from '@rollup/plugin-json';
 import copy from 'rollup-plugin-copy';
 import path from 'node:path';
 import { pathToFileURL } from 'url';
+import dts from 'rollup-plugin-dts'
 import pkg from './package.json' assert { type: "json" };
 
 const multiInput = RollupPluginMultiInput.default;
@@ -57,7 +58,7 @@ const getPlugins = () => {
             exclude: /node_modules/,
             extensions: ['.ts', '.tsx'],
         }),
-        // terser(),
+        terser(),
         postcss({
             extensions: ['.less', '.css'],
             minimize: true,
@@ -66,6 +67,7 @@ const getPlugins = () => {
         styles({
             mode: 'extract'
         }),
+        dts(),
         copy({
             targets: [
                 {
