@@ -7,7 +7,8 @@
   "files": [
     "index.js",
     "index.js.map",
-    "react-roadmap.min.css",
+    "css",
+    "assets",
     "constants",
     "mobile",
     "pc",
@@ -56,6 +57,7 @@
     "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.8",
     "rollup": "^3.21.1",
+    "rollup-plugin-assets": "^1.0.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-esbuild": "^5.0.0",
@@ -63,6 +65,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-url": "^3.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   }

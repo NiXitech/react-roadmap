@@ -10,7 +10,9 @@ import json from '@rollup/plugin-json';
 import copy from 'rollup-plugin-copy';
 import path from 'node:path';
 import { pathToFileURL } from 'url';
-import dts from 'rollup-plugin-dts'
+import dts from 'rollup-plugin-dts';
+import url from 'rollup-plugin-url';
+import assets from 'rollup-plugin-assets';
 import pkg from './package.json' assert { type: "json" };
 
 const multiInput = RollupPluginMultiInput.default;
@@ -63,21 +65,32 @@ const getPlugins = () => {
         postcss({
             extensions: ['.less', '.css'],
             minimize: true,
-            extract: `${name}.min.css`
+            extract: `css/${name}.min.css`
         }),
         styles({
             mode: 'extract'
         }),
+        // url(),
         copy({
             targets: [
                 {
                     src: 'package.json',
                     dest: output,
+                },
+                {
+                    src: 'src/assets',
+                    dest: `${output}`
                 }
             ]
         })
     ]
 }
+
+// const assetsConfig = {
+//     input: [
+
+//     ]
+// }
 
 const esmConfig = {
     input,
