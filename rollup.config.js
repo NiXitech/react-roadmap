@@ -80,7 +80,11 @@ const getPlugins = () => {
                 },
                 {
                     src: 'src/assets',
-                    dest: `${output}`
+                    dest: output,
+                },
+                {
+                    src: 'README.md',
+                    dest: output,
                 }
             ]
         })
