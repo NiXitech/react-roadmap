@@ -6,11 +6,11 @@ import MobileRoadMap from './RoadMap';
 type RoadMapBoxProps = MobileRoadMapNS.RoadMapBoxProps;
 
 const RoadMapBox: React.FC<RoadMapBoxProps> = React.memo((props) => {
-  const { nodes, title, tip } = props;
+  const { nodes, title, tip, ...other } = props;
   return (
     <div className="mobile-road-map">
       <div className="mobile-road-map-title">{title}</div>
-      <MobileRoadMap nodes={nodes} />
+      <MobileRoadMap nodes={nodes} {...other} />
       <div className="mobile-road-map-footer">{tip}</div>
     </div>
   );
