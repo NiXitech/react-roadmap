@@ -6,11 +6,11 @@
 
 <br />
 PC 端
-<img src="./examples/assets/pc.png">
+<img src="https://raw.githubusercontent.com/NiXitech/react-roadmap/main/examples/assets/pc.png">
 <br />
 <br />
 H5
-<img style="display:block;" src="./examples/assets/mobile.png">
+<img style="display:block;" src="https://raw.githubusercontent.com/NiXitech/react-roadmap/main/examples/assets/mobile.png">
 
 ## 安装
 
