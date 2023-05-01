@@ -7,6 +7,7 @@ export namespace RoadMapNS {
         nodes: Array<RoadMapNodes>;
         startColor?: string;
         endColor?: string;
+        svgHeight?: number;
     }
 
     export interface RoadMapBoxProps extends RoadMapProps {

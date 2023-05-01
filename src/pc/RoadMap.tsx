@@ -12,7 +12,7 @@ type RoadMapProps = RoadMapNS.RoadMapProps;
  * @returns
  */
 const RoadMap: React.FC<RoadMapProps> = (props) => {
-  const { nodes, startColor, endColor } = props;
+  const { nodes, startColor, endColor, svgHeight } = props;
   const finalNodes = getFinalNodes(CIRCLE_LIST, nodes);
 
   return (
@@ -23,7 +23,7 @@ const RoadMap: React.FC<RoadMapProps> = (props) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         fill="none"
         version="1.1"
-        height={SVG_HEIGHT}
+        height={svgHeight}
         viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
       >
         <defs>
@@ -70,6 +70,7 @@ const RoadMap: React.FC<RoadMapProps> = (props) => {
 RoadMap.defaultProps = {
   startColor: '#78FC8E',
   endColor: '#96F0F0',
+  svgHeight: SVG_HEIGHT,
 };
 
 export default RoadMap;

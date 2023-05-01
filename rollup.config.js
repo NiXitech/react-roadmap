@@ -6,13 +6,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import styles from 'rollup-plugin-styles';
 import terser from '@rollup/plugin-terser';
-import json from '@rollup/plugin-json';
 import copy from 'rollup-plugin-copy';
 import path from 'node:path';
 import { pathToFileURL } from 'url';
 import dts from 'rollup-plugin-dts';
-import url from 'rollup-plugin-url';
-import assets from 'rollup-plugin-assets';
+import staticImport from 'rollup-plugin-static-import';
 import pkg from './package.json' assert { type: "json" };
 
 const multiInput = RollupPluginMultiInput.default;
@@ -70,6 +68,9 @@ const getPlugins = () => {
         styles({
             mode: 'extract'
         }),
+        // staticImport.default({
+        //     include: ['src/**/*.css', 'src/**/*.less'],
+        // }),
         // url(),
         copy({
             targets: [
@@ -94,7 +95,7 @@ const getPlugins = () => {
 
 const esmConfig = {
     input,
-    plugins: [getPlugins()].concat(terser()),
+    plugins: getPlugins(),
     external: externalDeps.concat(externalPeerDeps),
     output: {
         name: 'react-roadmap',
