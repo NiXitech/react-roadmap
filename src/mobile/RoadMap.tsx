@@ -23,11 +23,11 @@ type RoadMapProps = MobileRoadMapNS.RoadMapProps;
  * @returns
  */
 const RoadMap: React.FC<RoadMapProps> = (props) => {
-  const { nodes, startColor, endColor } = props;
+  const { nodes, startColor, endColor, aosData, className } = props;
   const finalNodes = getFinalNodes(CIRCLE_LIST, nodes);
 
   return (
-    <div className="mobile-road-map--svg">
+    <div className={`mobile-road-map--svg ${className}`} data-aos={aosData}>
       <svg
         className="mobile-road-map--svg__line"
         xmlns="http://www.w3.org/2000/svg"

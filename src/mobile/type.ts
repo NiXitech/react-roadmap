@@ -7,11 +7,16 @@ export namespace MobileRoadMapNS {
         nodes: Array<RoadMapNodes>;
         startColor?: string;
         endColor?: string;
+        aosData?: string;
+        className?: string;
     }
 
     export interface RoadMapBoxProps extends RoadMapProps {
         title?: string;
         tip?: string;
+        titleClassName?: string;
+        footerClassName?: string;
+        roadMapClassName?: string;
     }
 
     export type CircleBoxNode = Omit<CircleBoxProps, 'x' | 'y'>;
