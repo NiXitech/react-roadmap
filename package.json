@@ -1,6 +1,6 @@
 {
   "name": "react-roadmap",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "classnames": "^2.3.2",
     "is-mobile": "^4.0.0",
     "lib-flexible": "^0.3.2",
     "postcss-px-to-viewport": "^1.1.1",

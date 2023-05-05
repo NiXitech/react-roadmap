@@ -13,6 +13,8 @@ import {
 } from './constant';
 import React from 'react';
 import { RoadMapNS } from './type';
+import cls from 'classnames';
+import { OpacityEnum } from '@/enums';
 
 type CircleBoxProps = RoadMapNS.CircleBoxProps;
 
@@ -42,18 +44,22 @@ const CircleBox: React.FC<CircleBoxProps> = (props) => {
   const descY = circleY + 2 * TEXT_Y_OFFSET;
 
   return (
-    <g>
+    <g >
       <circle cx={circleX} cy={circleY} r={CIRCLE_R} fill={color} />
-      {passed && (
         <g transform={`translate(${circleX - CIRCLE_R / 2}, ${circleY - CIRCLE_R / 2})`}>
           <path
+            className={cls({
+              'road-map--enter': passed,
+            })}
+            style={{
+              opacity: passed ? OpacityEnum.SHOW : OpacityEnum.HIDE,
+            }}
             x={circleX}
             y={circleY}
             d="M0,12.5C4.11242,13.9661,7.1582,17.6376,9.5,21C12.7918,16.0497,16.0457,10.5211,21,9L20.5,0C15.6676,3.49994,12.468,8.01189,9.5,14C8.00133,12.1765,6.24184,10.4752,4,9L0,12.5Z"
             fill={passedColor}
           />
         </g>
-      )}
 
       <foreignObject
         fontSize={yearFontSize}

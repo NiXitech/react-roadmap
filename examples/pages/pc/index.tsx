@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './index.less';
 import {
   NODE_1_DESC,
@@ -38,7 +38,7 @@ const NODES: RoadMapNS.RoadMapNodes[] = [
     yearColor: TEXT_YEAR_PASSED_COLOR,
     title: NODE_1_TITLE,
     year: NODE_1_YEAR,
-    passed: true,
+    passed: false,
     desc: NODE_1_DESC,
   },
   {
@@ -46,7 +46,7 @@ const NODES: RoadMapNS.RoadMapNodes[] = [
     yearColor: TEXT_YEAR_PASSED_COLOR,
     title: NODE_2_TITLE,
     year: NODE_2_YEAR,
-    passed: true,
+    passed: false,
     desc: NODE_2_DESC,
   },
   {
@@ -88,9 +88,36 @@ const NODES: RoadMapNS.RoadMapNodes[] = [
   },
 ];
 const ExamplePC = React.memo(() => {
+
+  const [nodes, setNodes] = useState(NODES);
+
+  const requestRef = useRef<(typeof requestAnimationFrame)>();
+
+  const animate = useCallback((time: number) => {
+    if (time <= 800) {
+      // 第一个立即展示，后续按照毫秒计算展示
+      nodes[0].passed = true;
+      setNodes([...nodes]);
+    } else if (time <= 1000) {
+      nodes[1].passed = true;
+      setNodes([...nodes]);
+    } else {
+      return;
+    }
+    // 递归调用
+    (requestRef as any).current = requestAnimationFrame(animate);
+  }, [nodes])
+
+  useEffect(() => {
+    // 开始动画
+    (requestRef as any).current = requestAnimationFrame(animate);
+    // 清理函数
+    return () => cancelAnimationFrame(requestRef.current as any);
+  }, [animate]);
+
   return (
     <div className="example-pc">
-      <RoadMapBox nodes={NODES} />
+      <RoadMapBox nodes={nodes} />
     </div>
   );
 });

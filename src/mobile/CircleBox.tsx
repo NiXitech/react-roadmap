@@ -12,6 +12,8 @@ import {
   TEXT_TITLE_FONT_SIZE,
 } from './constant';
 import { MobileRoadMapNS } from './type';
+import cls from 'classnames';
+import { OpacityEnum } from '@/enums';
 
 type CircleBoxProps = MobileRoadMapNS.CircleBoxProps;
 
@@ -29,14 +31,18 @@ const CircleBox: React.FC<CircleBoxProps> = (props) => {
   return (
     <g>
       <circle cx={circleX} cy={circleY} r={CIRCLE_R} fill={color} />
-      {passed && (
         <g transform={`translate(${circleX - CIRCLE_R / 2}, ${circleY - CIRCLE_R / 2})`}>
           <path
+           className={cls({
+            'mobile-road-map--enter': passed,
+          })}
+          style={{
+            opacity: passed ? OpacityEnum.SHOW : OpacityEnum.HIDE,
+          }}
             d="M0,8.75C2.8787,9.77628,5.01074,12.3464,6.65,14.7C8.95423,11.2348,11.232,7.3648,14.7,6.3L14.35,0C10.9673,2.44996,8.72758,5.60832,6.65,9.8C5.60093,8.52358,4.36929,7.33265,2.8,6.3L0,8.75Z"
             fill={passedColor}
           />
         </g>
-      )}
 
       <foreignObject
         fontSize={yearFontSize}
