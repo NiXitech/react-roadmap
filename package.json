@@ -1,6 +1,6 @@
 {
   "name": "react-roadmap",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -10,6 +10,7 @@
     "css",
     "assets",
     "constants",
+    "enums",
     "mobile",
     "pc",
     "utils"

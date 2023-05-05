@@ -13,7 +13,7 @@ import {
 } from './constant';
 import { MobileRoadMapNS } from './type';
 import cls from 'classnames';
-import { OpacityEnum } from '@/enums';
+import { OpacityEnum } from '../enums';
 
 type CircleBoxProps = MobileRoadMapNS.CircleBoxProps;
 

@@ -14,7 +14,7 @@ import {
 import React from 'react';
 import { RoadMapNS } from './type';
 import cls from 'classnames';
-import { OpacityEnum } from '@/enums';
+import { OpacityEnum } from '../enums';
 
 type CircleBoxProps = RoadMapNS.CircleBoxProps;
 
