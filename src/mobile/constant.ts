@@ -26,11 +26,11 @@ export const TEXT_COLOR = '#FFFFFF';
 
 export const TEXT_YEAR_PASSED_COLOR = '#51B843';
 export const TEXT_YEAR_COLOR = '#FFFFFF';
-export const TEXT_YEAR_FONT_SIZE = 16;
+export const TEXT_YEAR_FONT_SIZE = 20;
 
-export const TEXT_TITLE_FONT_SIZE = 16;
+export const TEXT_TITLE_FONT_SIZE = 14;
 
-export const TEXT_YEAR_Y_OFFSET = -4 + PATH_OFFSET_Y;
+export const TEXT_YEAR_Y_OFFSET = 0 + PATH_OFFSET_Y;
 export const TEXT_Y_OFFSET = -20 + PATH_OFFSET_Y;
 
 export const COLUMN_ONE_X = 130;
