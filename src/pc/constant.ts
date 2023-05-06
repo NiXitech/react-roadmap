@@ -24,11 +24,12 @@ export const TEXT_YEAR_Y_OFFSET = 65;
 export const TEXT_Y_OFFSET = 30;
 
 export const TEXT_WIDTH = 300;
+export const TEXT_DESC_WIDTH = 300;
 export const TEXT_HEIGHT = '100%';
 
-export const COLUMN_ONE_X = 549;
-export const COLUMN_TWO_X = 949;
-export const COLUMN_THREE_X = 1349;
+export const COLUMN_ONE_X = 595;
+export const COLUMN_TWO_X = 975;
+export const COLUMN_THREE_X = 1340;
 
 export const SVG_WIDTH = 1920;
 export const SVG_HEIGHT = 588;

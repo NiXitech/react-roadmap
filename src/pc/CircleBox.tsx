@@ -10,6 +10,7 @@ import {
   TEXT_TITLE_FONT_SIZE,
   TEXT_YEAR_FONT_SIZE,
   TEXT_DESC_FONT_SIZE,
+  TEXT_DESC_WIDTH,
 } from './constant';
 import React from 'react';
 import { RoadMapNS } from './type';
@@ -91,7 +92,7 @@ const CircleBox: React.FC<CircleBoxProps> = (props) => {
         fontSize={descFontSize}
         x={descX}
         y={descY}
-        width={TEXT_WIDTH}
+        width={TEXT_DESC_WIDTH}
         height={TEXT_HEIGHT}
       >
         <div className="road-map--svg__desc">
